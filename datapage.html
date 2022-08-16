@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>IOT Smart Meter</title>
+
+  <!-- Required meta tags -->
+  <link rel="icon" type="image/png" href="I.jpg">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- Bootstrap CSS -->
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm bg-light navbar-dark">
+    <header id="standard-logo" class="zo2-logo">
+      <img alt="[കേരളത്തിന്റെ ഊര്‍ജ്ജം]	" src="eb.png" />
+    </header>
+  </nav>
+  <script type="module" src="/style.css"></script>
+  <div class="container">
+    <div class="row">
+      <!-- Left Side -->
+
+      <div class="col-md-5">
+        <div class="card card-4">
+          <div class="card-body no-padding" style="padding: 0 !important">
+            <table class="table" id="bill-details">
+
+              <tr>
+                <th class="blue-head">USER</th>
+                <th class="blue-head" style="width: 40px; text-align: right !important">
+                  <div id="st"></div>
+                </th>
+              </tr>
+
+              <tr>
+                <td class="desc" style="color: rgb(44, 158, 16)"></td>
+                <td style="text-align: right !important; color: rgb(44, 158, 16)" class="amount">
+                  
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc" style="color: rgb(8, 8, 8)">Status</td>
+                <td style="text-align: right !important; color: rgb(0, 0, 0);" class="amount">
+                  Online
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc" style="color: rgb(5, 5, 5)">Theft</td>
+                <td style="text-align: right !important; color: rgb(255, 0, 0)" class="amount">
+                  Detected
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc">Payment Amount</td>
+                <td>
+                  <div class="form-check-inline">
+                    <input class="form-check-input" type="text" />
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <button class="form-check-input" type="submit" value="action" id="bill Submit">
+                      Add
+                    </button>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc ">Consumed Units</td>
+                <td style="text-align: right !important">
+                  <div id="val"></div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="control-label col-sm-3">Meter Power</td>
+                <td>
+                  <div class="desc" style="text-align: right !important">
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="pControl" value="1" checked  id="turnOn" />
+                      <label class="form-check-label" for="On"> On</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="pControl" value="0"  id="turnOff" />
+                      <label class="form-check-label" for="Off"> Off</label>
+                    </div>
+                  </div>
+                  <div id="powerCheck" style="display:block">
+                    <div class="contain" >
+                    <input type="text" id="capt" readonly="readonly" value="">
+                    <div id="refresh"> <img src="refresh.png" width="25px" height="25px" onclick="cap()">
+                    </div>
+                    <input type="text" id="textinput" placeholder="type..">
+                    <button id="check" onclick="validcap()">Check</button>
+                  </div>
+                  </div>
+                  <div id="powerSet" style="display:none;">
+                    <div class="On" >
+                    <button id="checkOn" >Submit</button>
+                  </div>
+                  </div>
+                  <div id="powerOff" style="display:none;">
+                    <div class="Off" >
+                    <button id="checkOff" >Submit</button>
+                  </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side -->
+
+      <div class="col-md-6 co-12">
+        <!-- First Side -->
+
+        <div class="card card-4" id="firstPage" style="display: block">
+          <div class="teel-head">Electricity Bill Calculator</div>
+          <div class="card-body" name="formTariff" method="post" action="" id="formTariff">
+            <div class="form-group row">
+              <label class="control-label col-sm-3">
+                Tariff
+              </label>
+              <div class="col-sm-9">
+                <select class="form-control" name="tariff_id" id="tariff">
+                  <option value="1" data-load-flag="0">LT-1A</option>
+                  <option value="5" data-load-flag="1">LT-4A</option>
+                  <option value="18" data-load-flag="1">LT-4B</option>
+                  <option value="6" data-load-flag="1">LT-5A</option>
+                  <option value="19" data-load-flag="1">LT-5B</option>
+                  <option value="7" data-load-flag="1">LT-6A</option>
+                  <option value="8" data-load-flag="1">LT-6B</option>
+                  <option value="9" data-load-flag="1">LT-6C</option>
+                  <option value="10" data-load-flag="1">LT-6D</option>
+                  <option value="2" data-load-flag="1">LT-6E</option>
+                  <option value="14" data-load-flag="1">LT-6F</option>
+                  <option value="22" data-load-flag="1">LT-6G</option>
+                  <option value="11" data-load-flag="1">LT-7A</option>
+                  <option value="12" data-load-flag="1">LT-7B</option>
+                  <option value="13" data-load-flag="1">LT-7C</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-3">Purpose</label>
+              <div class="col-sm-9">
+                <select name="purpose_id" id="purpose" class="form-control">
+                  <option value="15" selected="">Domestic</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-3">Billing Cycle</label>
+              <div class="col-sm-9" id="Billing-C">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="frequency" value="2"  id="frequency2" />
+                  <label class="form-check-label" for="phase1">
+                    2 months</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="frequency" value="1" checked="" id="frequency1" />
+                  <label class="form-check-label" for="phase3">
+                    1 month</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-3">Consumed Units</label>
+              <div class="col-sm-9">
+                <input type="number" id="unit" size="11.5" maxlength="5" required="" value="" autocomplete="off"
+                  class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-3">Phase</label>
+              <div class="col-sm-9">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="phase" value="1" checked="" id="phase1" />
+                  <label class="form-check-label" for="phase1">
+                    Single phase</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="phase" value="3" id="phase3" />
+                  <label class="form-check-label" for="phase3">
+                    Three phase</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group row" id="load-form-group" style="display: none">
+              <label class="control-label col-sm-3">Connected Load (watts)</label>
+              <div class="col-sm-9">
+                <input type="text" name="load" id="load" size="11.5" maxlength="6" value="" autocomplete="off"
+                  class="form-control" required="" />
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-sm-offset-5 col-sm-1">
+                <button type="submit" onclick="onSubmit()" value="submit" id="submitTariff"
+                  class="btn btn-fill btn-teel center" style="margin-bottom: 15px">
+                  Calculate
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Background Card -->
+
+        <div class="card card-4" style="display: none" id="bill">
+          <div class="card-body no-padding" style="padding: 0 !important">
+            <table class="table" id="bill-details">
+              <tr>
+                <th class="blue-head">Bill Details</th>
+                <th class="blue-head" style="width: 40px; text-align: right !important">
+                  Amount(₹
+                </th>
+              </tr>
+
+              <tr>
+                <td class="desc">Energy Charge*</td>
+                <td style="text-align: right !important" class="amount">
+                 <div id="EnergyCharge"></div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc">Duty</td>
+                <td style="text-align: right !important" class="amount">
+                  XX
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc">Fixed Charge*</td>
+                <td style="text-align: right !important" class="amount">
+                  <div id="fixedCharge"></div>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc">Meter Rent</td>
+                <td style="text-align: right !important" class="amount">
+                  12
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc">Meter Rent Central GST</td>
+                <td style="text-align: right !important" class="amount">
+                  1.08
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc" style="color: rgb(44, 158, 16)">
+                  FC Subsidy
+                </td>
+                <td style="
+                      text-align: right !important;
+                      color: rgb(44, 158, 16);
+                    " class="amount">
+                  XX
+                </td>
+              </tr>
+
+              <tr>
+                <td class="desc">Meter Rent State GST</td>
+                <td style="text-align: right !important" class="amount">
+                  1.08
+                </td>
+              </tr>
+
+              <tr>
+                <th class="desc blue-tail">Total<br /></th>
+                <th style="text-align: right !important" class="total blue-tail">
+                  <div id="T"></div>
+                </th>
+              </tr>
+
+              <tr>
+                <td class="desc"></td>
+                <td>
+                  <button type="submit" onclick="Back() " class="btn btn-fill btn-teel center"
+                    style="margin-bottom: 15px">
+                    Back
+                  </button>
+                </td>
+              </tr>
+
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/back.js"></script>
+  <script type="module" src="/fireBase.js"></script>
+  <script src="/cal.js"></script>
+</body>
+
+</html>

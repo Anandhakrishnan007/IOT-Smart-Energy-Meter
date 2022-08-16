@@ -1,0 +1,231 @@
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+
+.contain {
+	display: flex;
+	justify-content: left;
+	margin-top: 0px;
+}
+#capt {
+	width: 80px;
+	height: 30px;
+	font-size: 20px;
+	background-color: #9f9fd0;
+	border: none;
+	margin-left: 50px;
+	border-radius: 5px;
+	padding: 5px;
+	color: #000000;
+}
+#refresh {
+	background-color: #ec0606;
+	height: 0px;
+    margin-right: -30px;
+	border-radius: 5px;
+}
+#refresh img {
+	margin-top: 5px;
+	cursor: pointer;
+}
+#textinput {
+	width: 50px;
+	height: 30px;
+	font-size: 15px;
+	background-color: #ecb46fbb;
+	border: none;
+	margin-left: 40px;
+	border-radius: 5px;
+	padding: 5px;
+	color: #000000;
+}
+.contain button {
+	padding: 1px 10px;
+	height: 30px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	margin-left: 10px;
+	margin-top: 1px;
+	background-color: #764D11;
+	color: #CED4F0;
+	transition: .5s;
+}
+.contain button:hover {
+	background-color: #ff0000;
+}
+.On button {
+	padding: 1px 10px;
+	height: 30px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	margin-left: 225px;
+	margin-top: 1px;
+	background-color: #2c8a0a;
+	color: #CED4F0;
+	transition: .5s;
+}
+.On button:hover {
+	background-color: #94a1a1;
+}
+
+.Off button {
+	padding: 1px 10px;
+	height: 30px;
+	cursor: pointer;
+	border: none;
+	border-radius: 5px;
+	margin-left: 225px;
+	margin-top: 1px;
+	background-color: #c80b0b;
+	color: #CED4F0;
+	transition: .5s;
+}
+.Off button:hover {
+	background-color: #94a1a1;
+}
+
+
+
+body {
+    font-family: 'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+}
+.card {
+    /* display: inline-block; */
+    position: relative;
+    width: 100%;
+    margin: 25px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075);
+    color: rgba(0,0,0, 0.87);
+    background: #fff;
+    padding: 0 ;
+}
+.form-control {
+    border-radius: 0;
+    box-shadow: none;
+    border-color: #d2d6de;
+    display: block;
+    width: 100%;
+    height: 34px;
+}
+label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+input,select{
+    text-shadow: none;
+    color: #7d7d7d;
+    min-height: 30px;
+    box-shadow: none;
+    border-radius: 0;
+    background: none;
+    border: 1px solid #ebebeb;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+}
+.box-title {
+    display: inline-block;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1;
+    font-family: 'Source Sans Pro',sans-serif;
+}
+.center{
+    margin: 0;
+    text-align: center;
+}
+h1{
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+}
+.table {
+    margin-bottom: 0!important;
+}
+.calc-frame{
+ margin:auto;
+ background-color: #fff;
+ padding-left: 30px;
+ padding-right: 30px;
+}
+.card-4, .hover-shadow:hover {
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+.green, .hover-green:hover {
+    color: #fff!important;
+    background-color: #4CAF50!important;
+}
+.container, .panel {
+    padding: 0.01em 16px;
+}
+.f-input {
+    padding: 8px;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+.teel-head, .hover-teel-head:hover{
+    color: rgb(255, 255, 255)!important;
+    background-color: #0395d9!important;
+    font-size: 20px;
+    padding: 8px
+}
+.btn-teel{
+    color: #0395d9;
+    background-color: #fff;
+    border-color: #0395d9;
+}
+.btn-red{
+    color: #0000ff;
+    background-color: rgb(255, 255, 255);
+    border-color: #40ff00;
+}
+.btn-teel.active, .btn-red.active, .btn-teel.focus, .btn-teel:active, .btn-teel:focus, .btn-teel:hover,
+ .open>.dropdown-toggle.btn-teel {
+    color: #fff;
+    background-color: #0395d9;
+    border-color: #0395d9;
+}
+.blue-head{
+  color: rgb(255, 255, 255)!important;
+  background-color: #0395d9!important;
+  /* font-size: 20px; */
+  padding: 15px
+}
+.blue-tail{
+  color: #fff!important;
+  background-color: #0395d9!important;
+  /* font-size: 20px; */
+  padding: 15px
+}
+.red-tail{
+    color: rgb(0, 0, 0)!important;
+    background-color: #0395d9!important;
+    /* font-size: 20px; */
+    padding: 15px
+}
+.form-check-label {
+    margin-bottom: 8px!important;
+}
+.more{
+  display: none;
+}
+.zo2-logo{
+  width:15%;
+}
